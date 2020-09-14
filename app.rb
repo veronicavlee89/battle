@@ -10,6 +10,6 @@ get '/secret' do
   "This is a secret. Shh!"
 end 
 
-get '/cat' do 
-  '<img src="http://bit.ly/1eze8aE">'
+get '/cat' do
+  erb(:index)
 end 
