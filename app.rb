@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'player'
+require_relative 'lib/player'
 
 class Battle < Sinatra::Base
 
@@ -26,7 +26,7 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     session[:attack_confirmation] = $player_2.receive_attack
-
+    ## TODO: update to be $game.attack($player_2)
     redirect to('/play')
   end
 

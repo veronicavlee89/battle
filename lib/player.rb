@@ -12,8 +12,8 @@ class Player
     @hitpoints
   end
 
-  def receive_attack
-    @hitpoints -= 10
+  def deduct_hp(hp)
+    @hitpoints -= hp
     "You have attacked #{@name}!"
   end
 end

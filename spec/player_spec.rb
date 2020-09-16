@@ -17,13 +17,13 @@ describe Player do
     end
   end
 
-  describe '#receive_attack' do
+  describe '#deduct_hp(hp)' do
     it 'reduces the hitpoints of the player' do
-      expect { player.receive_attack }.to change{ player.hitpoints }.by -10
+      expect { player.deduct_hp(10) }.to change{ player.hitpoints }.by -10
     end
     
     it 'returns a confirmation message' do
-      expect(player.receive_attack).to eq "You have attacked #{player.name}!"
+      expect(player.deduct_hp(10)).to eq "You have attacked #{player.name}!"
     end
   end
 end
