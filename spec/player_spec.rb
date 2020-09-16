@@ -21,5 +21,9 @@ describe Player do
     it 'reduces the hitpoints of the player' do
       expect { player.receive_attack }.to change{ player.hitpoints }.by -10
     end
+    
+    it 'returns a confirmation message' do
+      expect(player.receive_attack).to eq "You have attacked #{player.name}!"
+    end
   end
 end

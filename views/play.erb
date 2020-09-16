@@ -2,7 +2,7 @@
 
 <%= $player_1.name %> vs <%= $player_2.name %><br>
 
-<%= $player_2.name %>'s HP is <%= @p2_hitpoints %><br>
+<%= $player_2.name %>'s HP is <%= $player_2.hitpoints %><br>
 
 <form action="/attack" method="post">
 <button type="submit">Attack <%=$player_2.name%></button>

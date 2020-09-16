@@ -14,5 +14,6 @@ class Player
 
   def receive_attack
     @hitpoints -= 10
+    "You have attacked #{@name}!"
   end
 end
