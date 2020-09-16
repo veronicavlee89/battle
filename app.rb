@@ -2,6 +2,8 @@ require 'sinatra/base'
 
 class Battle < Sinatra::Base
 
+  attr_reader :p2_hitpoints
+
   enable :sessions
 
   get '/' do
