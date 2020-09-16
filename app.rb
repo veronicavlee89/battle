@@ -20,8 +20,19 @@ class Battle < Sinatra::Base
   get '/play' do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
-    @p2_hitpoints = 100
+    @attack_confirmation = session[:attack_confirmation]
+
+    session[:p2_hitpoints] = 100 if session[:p2_hitpoints].nil?
+    @p2_hitpoints = session[:p2_hitpoints]
+
     erb(:play)
+  end
+
+  post '/attack' do
+    session[:p2_hitpoints] -= 10
+    session[:attack_confirmation] = "You have attacked #{session[:player_2]}!"
+
+    redirect to('/play')
   end
 
 run! if app_file == $0
