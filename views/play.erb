@@ -4,6 +4,8 @@
 
 <%= $game.player_2.name %>'s HP is <%= $game.player_2.hitpoints %><br>
 
+Player turn: <%= $game.player_1.name%>
+
 <form action="/attack" method="post">
 <button type="submit">Attack <%=$game.player_2.name%></button>
 </form>
