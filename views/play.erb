@@ -2,9 +2,12 @@
 
 <%= $game.player_1.name %> vs <%= $game.player_2.name %><br>
 
-<%= $game.player_2.name %>'s HP is <%= $game.player_2.hitpoints %><br>
+<%= $game.player_1.name %>'s HP is <%= $game.player_1.hitpoints %><br>
+<div text-align: right>
+  <%= $game.player_2.name %>'s HP is <%= $game.player_2.hitpoints %><br>
+</div>
 
-Player turn: <%= $game.player_1.name%>
+Player turn: <%= $game.active_player%>
 
 <form action="/attack" method="post">
 <button type="submit">Attack</button>

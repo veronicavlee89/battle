@@ -10,11 +10,15 @@ class Game
   def attack
     @player_turn[1].deduct_hp(10)
     switch_turn
-    "You have attacked #{@player_turn[0].name}!"
+    "#{@player_turn[1].name} has attacked #{@player_turn[0].name}!"
   end
 
   def switch_turn
     @player_turn.reverse!
+  end
+
+  def active_player
+    @player_turn[0].name
   end
 
 end

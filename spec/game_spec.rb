@@ -33,4 +33,11 @@ describe Game do
       expect{ game.attack }.to change{ game.player_turn[0] }.to(player_2)
     end
   end
+
+  describe '#active player' do
+    it 'shows the current player name' do
+      expect(game.active_player).to eq player_1.name
+    end
+  end
+  
 end

@@ -22,8 +22,5 @@ describe Player do
       expect { player.deduct_hp(10) }.to change{ player.hitpoints }.by -10
     end
     
-    it 'returns a confirmation message' do
-      expect(player.deduct_hp(10)).to eq "You have attacked #{player.name}!"
-    end
   end
 end
