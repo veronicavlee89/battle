@@ -14,6 +14,7 @@ class Battle < Sinatra::Base
   post '/names' do
     $player_1 = Player.new(params[:player_1])
     $player_2 = Player.new(params[:player_2])
+    $game = Game.new($player_1, $player_2)
 
     redirect to('/play')
   end
@@ -25,8 +26,7 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    session[:attack_confirmation] = $player_2.receive_attack
-    ## TODO: update to be $game.attack($player_2)
+    session[:attack_confirmation] = $game.attack($player_2)
     redirect to('/play')
   end
 
