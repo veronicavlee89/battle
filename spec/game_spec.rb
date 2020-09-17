@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   subject(:game) { Game.new(player_1, player_2) }
-  let(:player_1) { double('player 1', name: 'Bob', :deduct_hp => 10) }
-  let(:player_2) { double('player 2', name: 'Mary', :deduct_hp => 10) }
+  let(:player_1) { double('player 1', name: 'Bob', :deduct_hp => 10, hitpoints: 100) }
+  let(:player_2) { double('player 2', name: 'Mary', :deduct_hp => 10, hitpoints: 100) }
 
   it 'initializes with two players as arguments' do
     expect(Game).to respond_to(:new).with(2).arguments
@@ -35,8 +35,8 @@ describe Game do
   end
 
   describe '#active player' do
-    it 'shows the current player name' do
-      expect(game.active_player).to eq player_1.name
+    it 'returns the current player' do
+      expect(game.active_player).to eq player_1
     end
   end
   
